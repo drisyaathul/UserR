@@ -36,4 +36,10 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule1");
     }
+    @Test
+    void givenPassword2ReturnTrue() {
+        boolean actualPasswordFormat = userRegistration.validPassowrd("PassWord");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password- Rule2");
+    }
 }
