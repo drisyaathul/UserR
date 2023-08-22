@@ -4,11 +4,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
+
+    UserRegistration userRegistration = new UserRegistration();
     @Test
     void givenFirstNameReturnTrue() {
-        UserRegistration userRegistration = new UserRegistration();
         boolean actualFirstName = userRegistration.validFirstName("Drisya");
         Assertions.assertTrue(actualFirstName);
         System.out.println("Valid First Name");
+    }
+
+    @Test
+    void givenLastNameReturnTrue() {
+        boolean actualLastname = userRegistration.validLastName("Athul");
+        Assertions.assertTrue(actualLastname);
+        System.out.println("Valid Last Name");
     }
 }

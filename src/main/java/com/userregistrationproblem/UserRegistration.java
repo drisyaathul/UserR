@@ -7,4 +7,8 @@ public class UserRegistration {
 
         return Pattern.matches("^[A-Z][a-z]{2,}",firstName);
     }
+
+    public boolean validLastName(String lastName) {
+        return Pattern.matches("^[A-Z][a-z]{2,}",lastName);
+    }
 }
