@@ -20,7 +20,7 @@ public class UserRegistration {
         return Pattern.matches("^[0-9]{2}\\s[0-9]{10}",mobileFormat);
     }
 
-    public boolean validPassowrd(String password) {
-        return Pattern.matches("^[A-Za-z]{8,}",password);
+    public boolean validPassword(String password) {
+        return Pattern.matches("^[A-Za-z0-9]{8,}",password);
     }
 }

@@ -32,14 +32,20 @@ public class UserRegistrationTest {
     }
     @Test
     void givenPassword1ReturnTrue() {
-        boolean actualPasswordFormat = userRegistration.validPassowrd("password");
+        boolean actualPasswordFormat = userRegistration.validPassword("password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule1");
     }
     @Test
     void givenPassword2ReturnTrue() {
-        boolean actualPasswordFormat = userRegistration.validPassowrd("PassWord");
+        boolean actualPasswordFormat = userRegistration.validPassword("PassWord");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule2");
+    }
+    @Test
+    void givenPassword3ReturnTrue() {
+        boolean actualPasswordFormat = userRegistration.validPassword("PassWord123");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password- Rule3");
     }
 }
