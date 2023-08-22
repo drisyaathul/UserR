@@ -12,11 +12,16 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualFirstName);
         System.out.println("Valid First Name");
     }
-
     @Test
     void givenLastNameReturnTrue() {
         boolean actualLastname = userRegistration.validLastName("Athul");
         Assertions.assertTrue(actualLastname);
         System.out.println("Valid Last Name");
+    }
+    @Test
+    void givenEmailIdReturnTrue() {
+        boolean actualEmailId = userRegistration.validEmailId("abc.xyz@bl.co.in");
+        Assertions.assertTrue(actualEmailId);
+        System.out.println("Valid Email-Id");
     }
 }
