@@ -48,4 +48,10 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule3");
     }
+    @Test
+    void givenPassword4ReturnTrue() {
+        boolean actualPasswordFormat = userRegistration.validPassword("PassWord@123");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password- Rule4");
+    }
 }
