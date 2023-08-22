@@ -19,4 +19,8 @@ public class UserRegistration {
     public boolean validMobileFormat(String mobileFormat) {
         return Pattern.matches("^[0-9]{2}\\s[0-9]{10}",mobileFormat);
     }
+
+    public boolean validPassowrd(String password) {
+        return Pattern.matches("^[a-z]{8,}",password);
+    }
 }

@@ -30,4 +30,10 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid mobile Number");
     }
+    @Test
+    void givenPassword1ReturnTrue() {
+        boolean actualPasswordFormat = userRegistration.validPassowrd("password");
+        Assertions.assertTrue(actualPasswordFormat);
+        System.out.println("Valid Password- Rule1");
+    }
 }
