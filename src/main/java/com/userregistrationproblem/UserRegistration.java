@@ -15,4 +15,8 @@ public class UserRegistration {
     public boolean validEmailId(String emailId) {
         return Pattern.matches("^[a-z.@]{3,}",emailId);
     }
+
+    public boolean validMobileFormat(String mobileFormat) {
+        return Pattern.matches("^[0-9]{2}\\s[0-9]{10}",mobileFormat);
+    }
 }
