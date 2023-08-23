@@ -7,28 +7,53 @@ public class UserRegistrationTest {
 
     UserRegistration userRegistration = new UserRegistration();
     @Test
-    void givenFirstNameReturnTrue() {
+    void givenFirstNameHappyTest() {
         boolean actualFirstName = userRegistration.validFirstName("Drisya");
         Assertions.assertTrue(actualFirstName);
-        System.out.println("Valid First Name");
+        System.out.println("Valid FirstName");
     }
     @Test
-    void givenLastNameReturnTrue() {
+    void givenFirstNameSadTest() {
+        boolean actualFirstName = userRegistration.validFirstName("drisya");
+        Assertions.assertFalse(actualFirstName);
+        System.out.println("Invalid FirstName");
+    }
+    @Test
+    void givenLastNameHappyTest() {
         boolean actualLastname = userRegistration.validLastName("Athul");
         Assertions.assertTrue(actualLastname);
-        System.out.println("Valid Last Name");
+        System.out.println("Valid LastName");
     }
     @Test
-    void givenEmailIdReturnTrue() {
+    void givenLastNameSadTest() {
+        boolean actualLastname = userRegistration.validLastName("athul");
+        Assertions.assertFalse(actualLastname);
+        System.out.println("Invalid LastName");
+    }
+
+    @Test
+    void givenEmailIdHappyTest() {
         boolean actualEmailId = userRegistration.validEmailId("abc.xyz@bl.co.in");
         Assertions.assertTrue(actualEmailId);
         System.out.println("Valid Email-Id");
     }
     @Test
-    void givenMobileFormatReturnTrue() {
+    void givenEmailIdSadTest() {
+        boolean actualEmailId = userRegistration.validEmailId("abc!.xyz@bl.co.in");
+        Assertions.assertFalse(actualEmailId);
+        System.out.println("Invalid Email-Id");
+    }
+    @Test
+    void givenMobileFormatHappyTest() {
         boolean actualMobileFormat = userRegistration.validMobileFormat("91 9913988201");
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid mobile Number");
+    }
+    @Test
+    void givenMobileFormatSadTest() {
+        boolean actualMobileFormat = userRegistration.validMobileFormat("919913988201");
+        Assertions.assertFalse(actualMobileFormat);
+        System.out.println("Invalid mobile Number");
     }
     @Test
     void givenPassword1ReturnTrue() {
@@ -49,10 +74,16 @@ public class UserRegistrationTest {
         System.out.println("Valid Password- Rule3");
     }
     @Test
-    void givenPassword4ReturnTrue() {
+    void givenPassword4HappyTest() {
         boolean actualPasswordFormat = userRegistration.validPassword("PassWord@123");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule4");
+    }
+    @Test
+    void givenPassword4SadTest() {
+        boolean actualPasswordFormat = userRegistration.validPassword("PassWord!@123");
+        Assertions.assertFalse(actualPasswordFormat);
+        System.out.println("Invalid Password- Rule4");
     }
     @Test
     void givenSampleEmailsReturnTrue() {
