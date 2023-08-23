@@ -23,4 +23,8 @@ public class UserRegistration {
     public boolean validPassword(String password) {
         return Pattern.matches("^[A-Za-z0-9@]{8,}",password);
     }
+
+    public boolean validEmail(String emailId) {
+        return Pattern.matches("^[a-z0-9].{3,}",emailId);
+    }
 }

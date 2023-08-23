@@ -54,4 +54,42 @@ public class UserRegistrationTest {
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule4");
     }
+    @Test
+    void givenSampleEmailsReturnTrue() {
+        boolean actualEmailFormat1 = userRegistration.validEmail("abc@yahoo.com");
+        Assertions.assertTrue(actualEmailFormat1);
+        System.out.println("Valid Email address-1");
+
+        boolean actualEmailFormat2 = userRegistration.validEmail("abc-100@yahoo.com");
+        Assertions.assertTrue(actualEmailFormat2);
+        System.out.println("Valid Email address-2");
+
+        boolean actualEmailFormat3 = userRegistration.validEmail("abc.100@yahoo.com");
+        Assertions.assertTrue(actualEmailFormat3);
+        System.out.println("Valid Email address-3");
+
+        boolean actualEmailFormat4 = userRegistration.validEmail("abc111@abc.com");
+        Assertions.assertTrue(actualEmailFormat4);
+        System.out.println("Valid Email address-4");
+
+        boolean actualEmailFormat5 = userRegistration.validEmail("abc-100@abc.net");
+        Assertions.assertTrue(actualEmailFormat5);
+        System.out.println("Valid Email address-5");
+
+        boolean actualEmailFormat6 = userRegistration.validEmail("abc.100@abc.com.au");
+        Assertions.assertTrue(actualEmailFormat6);
+        System.out.println("Valid Email address-6");
+
+        boolean actualEmailFormat7 = userRegistration.validEmail("abc@1.com");
+        Assertions.assertTrue(actualEmailFormat7);
+        System.out.println("Valid Email address-7");
+
+        boolean actualEmailFormat8 = userRegistration.validEmail("abc@gmail.com.com");
+        Assertions.assertTrue(actualEmailFormat8);
+        System.out.println("Valid Email address-8");
+
+        boolean actualEmailFormat9 = userRegistration.validEmail("abc+100@gmail.com");
+        Assertions.assertTrue(actualEmailFormat9);
+        System.out.println("Valid Email address-9");
+    }
 }
