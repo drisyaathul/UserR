@@ -7,50 +7,50 @@ public class UserRegistrationTest {
 
     UserRegistration userRegistration = new UserRegistration();
     @Test
-    void givenFirstNameHappyTest() throws InvalidFirstNameException {
-        boolean actualFirstName = userRegistration.validFirstName("Drisya");
+    void givenFirstNameHappyTest() throws InvalidUserDetailsException {
+        boolean actualFirstName = UserRegistration.validFirstName.validFirstName("Drisya");
         Assertions.assertTrue(actualFirstName);
         System.out.println("Valid FirstName");
     }
     @Test
-    void givenLastNameHappyTest() throws InvalidLastNameException{
-        boolean actualLastname = userRegistration.validLastName("Athul");
+    void givenLastNameHappyTest() throws InvalidUserDetailsException{
+        boolean actualLastname = UserRegistration.validLastName.ValidateLastName("Athul");
         Assertions.assertTrue(actualLastname);
         System.out.println("Valid LastName");
     }
     @Test
-    void givenEmailIdHappyTest() throws InvalidEmailException{
-        boolean actualEmailId = userRegistration.validEmailId("abc.xyz@bl.co.in");
+    void givenEmailIdHappyTest() throws InvalidUserDetailsException{
+        boolean actualEmailId = UserRegistration.validEmailId.validateEmailId("abc.xyz@bl.co.in");
         Assertions.assertTrue(actualEmailId);
         System.out.println("Valid Email-Id");
     }
     @Test
-    void givenMobileFormatHappyTest() throws InvalidMobileNumberException{
-        boolean actualMobileFormat = userRegistration.validMobileFormat("91 9913988201");
+    void givenMobileFormatHappyTest() throws InvalidUserDetailsException{
+        boolean actualMobileFormat = UserRegistration.validMobileFormat.ValidateMobileNumber("91 9913988201");
         Assertions.assertTrue(actualMobileFormat);
         System.out.println("Valid mobile Number");
     }
     @Test
-    void givenPassword1ReturnTrue() throws InvalidPasswordException{
-        boolean actualPasswordFormat = userRegistration.validPassword("password");
+    void givenPassword1ReturnTrue() throws InvalidUserDetailsException{
+        boolean actualPasswordFormat = UserRegistration.validPassword.ValidatePasswordFormat("password");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule1");
     }
     @Test
-    void givenPassword2ReturnTrue() throws InvalidPasswordException {
-        boolean actualPasswordFormat = userRegistration.validPassword("PassWord");
+    void givenPassword2ReturnTrue() throws InvalidUserDetailsException {
+        boolean actualPasswordFormat = UserRegistration.validPassword.ValidatePasswordFormat("PassWord");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule2");
     }
     @Test
-    void givenPassword3ReturnTrue() throws InvalidPasswordException{
-        boolean actualPasswordFormat = userRegistration.validPassword("PassWord123");
+    void givenPassword3ReturnTrue() throws InvalidUserDetailsException{
+        boolean actualPasswordFormat = UserRegistration.validPassword.ValidatePasswordFormat("PassWord123");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule3");
     }
     @Test
-    void givenPassword4HappyTest() throws InvalidPasswordException{
-        boolean actualPasswordFormat = userRegistration.validPassword("PassWord@123");
+    void givenPassword4HappyTest() throws InvalidUserDetailsException{
+        boolean actualPasswordFormat = UserRegistration.validPassword.ValidatePasswordFormat("PassWord@123");
         Assertions.assertTrue(actualPasswordFormat);
         System.out.println("Valid Password- Rule4");
     }
